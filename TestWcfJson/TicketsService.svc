@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="TicketsWcfJson.TicketsService" CodeBehind="TicketsService.svc.cs" %>
