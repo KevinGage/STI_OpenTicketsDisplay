@@ -3,7 +3,7 @@ A read only display for the STI tickets program using WCF
 
 This is a multi-part application.  Part 1 is a WCF service to be run on IIS which exposes a JSON representation of open tickets in the STI tickets database.  Part 2 is a web client used to visualize the JSON.
 
-<h3>WCF Install Instructions:</h3>
+<h3>WCF Service Install Instructions:</h3>
 <ol>
 <li>Make sure Tickets database is available on the network</li>
 <li>Install IIS on an application server</li>
