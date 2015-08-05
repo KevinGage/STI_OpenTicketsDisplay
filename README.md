@@ -14,5 +14,7 @@ This is a multi-part application.  Part 1 is a WCF service to be run on IIS whic
 <li>Copy the Web.config file and the TicketsService.svc file to the root of the application</li>
 <li>Copy TicketsWcfJson.dll file to a subfolder called bin</li>
 <li>Edit the Web.config file and correct the connection string to the database</li>
-<li>Visit the page and make sure JSON is displayed.  Example http:/192.168.1.1/ticketswcf/TicketsService.svc/GetOpenTickets</li>
+<ul><li>Example: add name="TicketsConnection" connectionString="connection string here" providerName="System.Data.SqlClient"</li></ul>
+<li>Visit the page and make sure JSON is displayed.</li>
+<ul><li>Example http:/192.168.1.1/ticketswcf/TicketsService.svc/GetOpenTickets</li></ul>
 </ol>
