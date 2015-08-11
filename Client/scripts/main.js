@@ -1,12 +1,5 @@
 $( document ).ready(function() {
     $.getJSON( "/TicketsWcf/TicketsService.svc/GetOpenTickets", function (data) {
-		/*
-		$.each (data, function (index, ticketObject) {
-			$.each (ticketObject, function (key, val){
-				$("#wrapper").append("<p>" + key + " " + val + "</p>");
-			}) 
-		});
-		*/
 		$.each (data, function (index, ticketObject) {
 			var ticketDiv = document.createElement("div");
 			$(ticketDiv).addClass("ticketdiv");
@@ -37,6 +30,7 @@ $( document ).ready(function() {
 			$(ticketDiv).append(assignDiv);
 			
 			$("#wrapper").append(ticketDiv);
+			
 		});
 	});
 });

@@ -1,0 +1,45 @@
+#wrapper {
+	height: 100vh;
+}
+
+.ticketdiv {
+	width: 90%;
+	height: 9%;
+	margin-left: 5%;
+	margin-top: 5px;
+	
+	border-width: 8px 10px 8px 17px; 
+	border-image: url(img/speech_bubble_orange.png) 8 10 8 17 stretch stretch;
+	-webkit-border-image: url(img/speech_bubble_orange.png) 8 10 8 17 stretch stretch;
+	-moz-border-image: url(img/speech_bubble_orange.png) 8 10 8 17 stretch stretch;
+	-o-border-image: url(img/speech_bubble_orange.png) 8 10 8 17 stretch stretch;
+	
+	overflow: hidden;
+    text-overflow:ellipsis;
+    font-size: 1.2em;
+}
+
+.ticketdiv > div {
+	display: inline-block;
+}
+
+.clientdiv {
+	width: 10%;
+	height: 100%;
+}
+
+.deescriptiondiv {
+	width: 80%;
+	height: 100%;
+	text-align: center;
+}
+
+.assigndiv {
+	width: 10%;
+	height: 100%;
+}
+
+span {
+	
+	text-align: center;
+}
