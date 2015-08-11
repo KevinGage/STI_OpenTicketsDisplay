@@ -18,28 +18,28 @@
     text-overflow:ellipsis;
     font-size: 1.2em;
 }
-
+/*
 .ticketdiv > div {
-	display: inline-block;
+	padding: 0.25%;
 }
-
+*/
 .clientdiv {
 	width: 10%;
 	height: 100%;
+	float: left;
+	display: inline;
 }
 
 .deescriptiondiv {
 	width: 80%;
 	height: 100%;
 	text-align: center;
+	display: inline-block;
 }
 
 .assigndiv {
 	width: 10%;
 	height: 100%;
-}
-
-span {
-	
-	text-align: center;
+	float: right;
+	display: inline;
 }
