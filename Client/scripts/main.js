@@ -30,7 +30,11 @@ function updateDiv(ticketNum){
 }
 
 function deleteDiv(ticketNum){
-	
+	$('#wrapper > div').each(function () {
+		if ($(this).data("ticketNum") == ticketNum){
+			$(this).remove();
+		}
+	});
 }
 
 function createDiv(ticket){
