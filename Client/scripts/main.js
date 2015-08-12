@@ -29,7 +29,7 @@ function updateDiv(ticketNum){
 	
 }
 
-function deleteDiv(ticketNun){
+function deleteDiv(ticketNum){
 	
 }
 
