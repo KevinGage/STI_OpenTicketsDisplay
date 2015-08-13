@@ -7,6 +7,10 @@ $( document ).ready(function() {
 		oldTicketArray = data;
 		$.each (data, function (index, ticketObject) {
 			createDiv(ticketObject)	
+		})
+		
+		$(".ticketdiv").click(function() {
+			deleteDiv($(this).data("TicketNumber"));
 		});
 	});
 	
@@ -23,16 +27,21 @@ $( document ).ready(function() {
 			}
 		});
 	}, 30000);
+	
+	
 });
 
 function updateDiv(ticketNum){
 	
 }
 
-function deleteDiv(ticketNum){
-	$('#wrapper > div').each(function () {
-		if ($(this).data("ticketNum") == ticketNum){
-			$(this).remove();
+function deleteDiv(ticketNum){	
+	$(".ticketdiv").each(function() {
+		if ($(this).data("TicketNumber") === ticketNum){
+			$(this).hide( 1000, function(){
+				$(this).remove();
+			});
+			return false;
 		}
 	});
 }
