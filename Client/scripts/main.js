@@ -24,6 +24,9 @@ $( document ).ready(function() {
 				$.each (newTicketArray, function (indexNew, ticketObjectNew) {
 					if (ticketObjectOld.TicketNumber === ticketObjectNew.TicketNumber){
 						stillExists = true;
+							if (JSON.stringify(ticketObjectOld) != JSON.stringify(ticketObjectNew)){
+								updateDiv(ticketObjectNew);
+							}
 						return false;
 					}
 				});
@@ -45,14 +48,20 @@ $( document ).ready(function() {
 					createDiv(ticketObjectNew);
 				}
 			});
+			
+			oldTicketArray = newTicketArray;
 		});
 	}, 30000);
-	
-	
 });
 
-function updateDiv(ticket){
-	
+function updateDiv(newTicket){
+	$(".ticketdiv").each(function() {
+		if ($(this).data("TicketNumber") === newTicket.TicketNumber){
+			$('> .clientdiv > span', this).text(newTicket.ClientName);
+			$('> .descriptiondiv > span', this).text(newTicket.Description);
+			$('> .assigndiv > span', this).text(newTicket.AssignTech);
+		}
+	});
 }
 
 function deleteDiv(ticketNum){	
@@ -79,7 +88,7 @@ function createDiv(ticket){
 	$(clientDiv).append(clientDivText);
 
 	var descriptionDiv = document.createElement("div");
-	$(descriptionDiv).addClass("deescriptiondiv");
+	$(descriptionDiv).addClass("descriptiondiv");
 
 	var descriptionDivText = document.createElement("span");
 	descriptionDivText.innerHTML = ticket.Description;
