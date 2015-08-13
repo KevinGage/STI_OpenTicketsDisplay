@@ -24,25 +24,21 @@ $( document ).ready(function() {
 				
 			}
 			
+
 			
 			//check for ticket numbers in old array.  Anything missing open
 			$.each (newTicketArray, function (indexNew, ticketObjectNew) {
-				
 				var alreadyExists = false;
-				
 				$.each (oldTicketArray, function (indexOld, ticketObjectOld) {
-					
 					if (ticketObjectOld.TicketNumber === ticketObjectNew.TicketNumber){
 						alreadyExists = true;
+						return false;
 					}
 				});
-				
 				if (!alreadyExists){
 					createDiv(ticketObjectNew);
 				}
-				
 			});
-			
 		});
 	}, 30000);
 	
