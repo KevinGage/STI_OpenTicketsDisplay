@@ -31,7 +31,7 @@ $( document ).ready(function() {
 	
 });
 
-function updateDiv(ticketNum){
+function updateDiv(ticket){
 	
 }
 
@@ -77,5 +77,7 @@ function createDiv(ticket){
 	$(ticketDiv).append(assignDiv);
 	
 	$("#wrapper").append(ticketDiv);
+	$(ticketDiv).hide(0);
+	$(ticketDiv).show( 1000 );
 }
 
