@@ -4,7 +4,6 @@ var newTicketArray = [];
 
 $( document ).ready(function() {
     $.getJSON( "/TicketsWcf/TicketsService.svc/GetOpenTickets", function (data) {
-		data.reverse();
 		oldTicketArray = data;
 		$.each (data, function (index, ticketObject) {
 			createDiv(ticketObject)	
@@ -17,7 +16,6 @@ $( document ).ready(function() {
 	
 	setInterval(function() {
 		$.getJSON( "/TicketsWcf/TicketsService.svc/GetOpenTickets", function (data) {
-			data.reverse();
 			newTicketArray = data;
 			
 			for (var i = 0; i < oldTicketArray.length; i++){
@@ -78,7 +76,7 @@ function createDiv(ticket){
 	$(ticketDiv).append(descriptionDiv);
 	$(ticketDiv).append(assignDiv);
 	
-	$("#wrapper").append(ticketDiv);
+	$("#wrapper").prepend(ticketDiv);
 	$(ticketDiv).hide(0);
 	$(ticketDiv).show( 1000 );
 }
