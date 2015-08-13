@@ -18,13 +18,31 @@ $( document ).ready(function() {
 		$.getJSON( "/TicketsWcf/TicketsService.svc/GetOpenTickets", function (data) {
 			newTicketArray = data;
 			
+
 			for (var i = 0; i < oldTicketArray.length; i++){
 				//check for ticket numbers in new array.  Anything found compare the rest of the ticket info and update div if necissary. anything missing close
 				
 			}
-			for (var i = 0; i < newTicketArray.length; i++){
-				//check for ticket numbers in old array.  Anything missing open
-			}
+			
+			
+			//check for ticket numbers in old array.  Anything missing open
+			$.each (newTicketArray, function (indexNew, ticketObjectNew) {
+				
+				var alreadyExists = false;
+				
+				$.each (oldTicketArray, function (indexOld, ticketObjectOld) {
+					
+					if (ticketObjectOld.TicketNumber === ticketObjectNew.TicketNumber){
+						alreadyExists = true;
+					}
+				});
+				
+				if (!alreadyExists){
+					createDiv(ticketObjectNew);
+				}
+				
+			});
+			
 		});
 	}, 30000);
 	
